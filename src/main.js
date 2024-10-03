@@ -29,12 +29,13 @@ formEl.addEventListener("submit", (event) => {
 
     fetchImages(inputValue)
         .then(images => {
-            if (images.hits < 1) {
+            const imagesList = images.data.hits;
+            if (imagesList.length < 1) {
                 showErrorNotification("Sorry, there are no images matching your search query. Please try again!");
                 return;
             }
 
-            renderImages(images);
+            renderImages(imagesList);
             gallery.refresh();
         })
         .catch(error => showErrorNotification(`Error fetching images: ${error.message}`))

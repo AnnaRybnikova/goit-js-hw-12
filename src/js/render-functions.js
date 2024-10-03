@@ -10,7 +10,7 @@ export const clearGallery = () => {
 }
 
 export const renderImages = images => {
-  const markup = images.hits
+  const markup = images
     .map((image) => {
         return `
         <li class="gallery-item">

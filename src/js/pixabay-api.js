@@ -1,5 +1,8 @@
+import axios from 'axios';
+
 const PERSONAL_KEY = "46326660-f347cca7b0a8e4257f7060487";
-const BASE_URL = "https://pixabay.com/api/";
+
+axios.defaults.baseURL = "https://pixabay.com/api/";
 
 const searchParams = (imageQueryString) => new URLSearchParams({
     key: PERSONAL_KEY,
@@ -9,12 +12,5 @@ const searchParams = (imageQueryString) => new URLSearchParams({
     safesearch: "true",
 });
 
-export const fetchImages = imageQueryString => {
-    return fetch(`${BASE_URL}?${searchParams(imageQueryString)}`)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(response.status);
-            }
-            return response.json();
-        });
-}
+export const fetchImages = imageQueryString => 
+    axios.get(`?${searchParams(imageQueryString)}`);
