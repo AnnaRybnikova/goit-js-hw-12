@@ -68,7 +68,7 @@ export const hideElement = (element) => {
 
 export const scrollPage = () => {
     const cardHeight = galleryEl.firstElementChild.getBoundingClientRect().height;
-    console.log(cardHeight);
+    
     window.scrollBy({
         top: cardHeight * 2,
         behavior: 'smooth',
