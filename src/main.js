@@ -2,8 +2,8 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 import {
-    loadMoreBtnEl, renderImages, showErrorNotification, showInfoNotification,
-    galleryEl, clearGallery, showLoader, removeLoader, showElement, hideElement, scrollPage
+    galleryEl, loadMoreBtnEl, clearGallery, renderImages, showLoader, removeLoader,
+    showElement, hideElement, scrollPage, showErrorNotification, showInfoNotification
 } from "./js/render-functions";
 import { fetchImages } from "./js/pixabay-api";
 
@@ -39,7 +39,7 @@ async function handleFormSubmit(event) {
         return;
     }
 
-    fetchAndRenderImages(inputValue);
+    await fetchAndRenderImages(inputValue);
 }
 
 async function handleClick() {

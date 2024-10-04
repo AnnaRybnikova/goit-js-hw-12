@@ -73,7 +73,6 @@ export const scrollPage = () => {
         top: cardHeight * 2,
         behavior: 'smooth',
   });
-
 }
 
 export const showErrorNotification = errorMessage => iziToast.error({
