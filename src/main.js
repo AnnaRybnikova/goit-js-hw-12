@@ -20,7 +20,7 @@ let gallery = new SimpleLightbox('.gallery a', {
 gallery.on('show.simplelightbox');
 
 formEl.addEventListener("submit", async event => handleFormSubmit(event));
-loadMoreBtnEl.addEventListener("click", async () => handleClick())
+loadMoreBtnEl.addEventListener("click", async () => handleClick());
 
 async function handleFormSubmit(event) {
     event.preventDefault();
@@ -35,7 +35,7 @@ async function handleFormSubmit(event) {
 
     if (!inputValue) {
         showErrorNotification("Input can not be empty!");
-        removeLoader()
+        removeLoader();
         return;
     }
 
