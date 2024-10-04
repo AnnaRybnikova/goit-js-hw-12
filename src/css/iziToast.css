@@ -26,3 +26,7 @@
 .custom-noty.error {
     background-color: #ef4040 !important;
 }
+
+.custom-noty.info {
+    background-color: #09f !important;
+}
